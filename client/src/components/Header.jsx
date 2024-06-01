@@ -34,21 +34,21 @@ export default function Header() {
             placeholder="Search..."
             className="pr-10 pl-3 py-2 w-64 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
           />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
-            <AiOutlineSearch size={20} />
+          <div className="absolute inset-y-0 right-0 flex items-center pr-10 pointer-events-none">
+            <AiOutlineSearch size={25} />
           </div>
         </div>
       </form>
 
       {/* Search Icon Only (Visible on Smaller Screens) */}
-      <Button className="lg:hidden ml-4" color="gray">
+      <Button className="lg:hidden ml-4" color="black">
         <AiOutlineSearch size={24} />
       </Button>
 
       {/* Items Aligned Between Search and Sign In */}
       <div className="flex gap-2 md:order-2 lg:flex lg:items-center">
-        {/* Moon Icon (Visible on Smaller Screens) */}
-        <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+        {/* Moon Icon */}
+        <Button className="w-12 h-10" color="gray" pill>
           <FaMoon />
         </Button>
 
@@ -61,7 +61,7 @@ export default function Header() {
 
         {/* Sign In Button */}
         <Link to="/sign-in">
-          <Button>
+          <Button> 
             <span className="px-2 py-1 bg-gradient-to-r from-green-800 to-red-800">Sign In</span>
           </Button>
         </Link>
