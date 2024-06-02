@@ -61,8 +61,8 @@ export default function Header() {
 
         {/* Sign In Button */}
         <Link to="/sign-in">
-          <Button> 
-            <span className="px-2 py-1 bg-gradient-to-r from-green-800 to-red-800">Sign In</span>
+          <Button className="bg-gradient-to-r from-green-800 to-red-800 text-black">  
+            Sign In
           </Button>
         </Link>
 
