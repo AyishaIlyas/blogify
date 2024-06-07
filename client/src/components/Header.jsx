@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Button, Navbar, TextInput } from 'flowbite-react';
+import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react';
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon } from 'react-icons/fa';
+import {useSelector} from 'react-redux';
 
 export default function Header() {
   const path = useLocation().pathname;
+  const {currentUser} = useSelector(state => state.user);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(path);
 
@@ -60,11 +62,36 @@ export default function Header() {
         </div>
 
         {/* Sign In Button */}
-        <Link to="/sign-in">
+        {currentUser ? (
+
+         <Dropdown
+         arrowIcon = {false}
+         inline
+         label={
+          <Avatar alt = 'user' img = {currentUser.profilePicture} rounded />
+         }
+         >
+           <Dropdown.Header>
+            <span className = 'block text-sm'>@{currentUser.username}</span>
+            <span className = 'block text-sm font-medium truncate'>
+              {currentUser.email}
+            </span>
+           </Dropdown.Header>
+           <Link to={'/dashboard?tab=profile'}>
+              <Dropdown.Item>Profile</Dropdown.Item>
+            </Link>
+            <Dropdown.Divider />
+            <Dropdown.Item>Sign out</Dropdown.Item>
+        </Dropdown>
+        
+        ):
+        (  <Link to="/sign-in">
           <Button className="bg-gradient-to-r from-green-800 to-red-800 text-black" outline>  
             Sign In
           </Button>
-        </Link>
+        </Link>) 
+        }
+      
 
         {/* Navbar Toggle (Dropdown Menu for Smaller Screens) */}
         <Button className="lg:hidden" onClick={handleDropdownToggle}>
