@@ -98,7 +98,7 @@ export default function Header() {
       
 
         {/* Navbar Toggle (Dropdown Menu for Smaller Screens) */}
-        <Button className="lg:hidden bg-gradient-to-r from-green-800 to-red-800 text-black" onClick={handleDropdownToggle}>
+        <Button className="lg:hidden bg-gradient-to-r from-green-800 to-red-800 text-black" outline onClick={handleDropdownToggle}>
           <span className="sr-only">Toggle navigation</span>
           <svg
             className="w-6 h-6 text-gray-800"
