@@ -98,7 +98,7 @@ export default function Header() {
       
 
         {/* Navbar Toggle (Dropdown Menu for Smaller Screens) */}
-        <Button className="lg:hidden" onClick={handleDropdownToggle}>
+        <Button className="lg:hidden bg-gradient-to-r from-green-800 to-red-800 text-black" onClick={handleDropdownToggle}>
           <span className="sr-only">Toggle navigation</span>
           <svg
             className="w-6 h-6 text-gray-800"
@@ -118,7 +118,7 @@ export default function Header() {
 
         {/* Dropdown Menu */}
         {dropdownOpen && (
-          <div className="lg:hidden w-full bg-white shadow-md mt-2 rounded-lg absolute top-16 left-0 z-10">
+          <div className="lg:hidden w-full bg-white shadow-md mt-2 rounded-lg absolute top-16 left-0 z-1">
             <Link to="/" className={`block px-4 py-2 text-gray-800 ${activeSection === '/' ? 'bg-blue-200' : ''}`} onClick={() => handleLinkClick('/')}>Home</Link>
             <Link to="/about" className={`block px-4 py-2 text-gray-800 ${activeSection === '/about' ? 'bg-blue-200' : ''}`} onClick={() => handleLinkClick('/about')}>About</Link>
             <Link to="/projects" className={`block px-4 py-2 text-gray-800 ${activeSection === '/projects' ? 'bg-blue-200' : ''}`} onClick={() => handleLinkClick('/projects')}>Projects</Link>
