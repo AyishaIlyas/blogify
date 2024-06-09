@@ -18,7 +18,7 @@ const postSchema = new mongoose.Schema(
     image: {
       type: String,
       default:
-        '../client/src/assets/create-post-default-image.png',
+        '..client/assets/defaultImage.png',
     },
     category: {
       type: String,
