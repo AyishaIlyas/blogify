@@ -18,7 +18,7 @@ const postSchema = new mongoose.Schema(
     image: {
       type: String,
       default:
-        '..client/assets/defaultImage.png',
+        'https://miro.medium.com/v2/resize:fit:2400/1*gYiXVgqfGak35jp5EA56BQ.png',
     },
     category: {
       type: String,
