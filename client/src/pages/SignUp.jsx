@@ -85,7 +85,7 @@ import OAuth from '../components/OAuth';
         </form>
         <div className="flex gap-2 text-sm mt-5">
           <span>Have an account</span>
-          <Link to="/sign-in" className="text-blue-500">Sing In</Link>
+          <Link to="/sign-in" className="text-blue-500">Sign In</Link>
         </div>
         {errorMessage && (
              <Alert className="mt-5" color="failure">
