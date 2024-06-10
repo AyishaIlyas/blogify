@@ -22,7 +22,7 @@ export default function FooterCom() {
               <Footer.Title title='About' />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href='#'
+                  href='/projects'
                   
                 >
                   Projects
@@ -36,10 +36,10 @@ export default function FooterCom() {
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title='Follow us' />
+              <Footer.Title title='Follow me' />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href='#'
+                  href='https://github.com/AyishaIlyas'
                 >
                   Github
                 </Footer.Link>
@@ -66,7 +66,7 @@ export default function FooterCom() {
             <Footer.Icon href='#' icon={BsFacebook}/>
             <Footer.Icon href='#' icon={BsInstagram}/>
             <Footer.Icon href='#' icon={BsTwitter}/>
-            <Footer.Icon href='#' icon={BsGithub}/>
+            <Footer.Icon href='https://github.com/AyishaIlyas' icon={BsGithub}/>
             <Footer.Icon href='#' icon={BsDribbble}/>
 
           </div>
