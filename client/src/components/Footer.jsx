@@ -23,13 +23,13 @@ export default function FooterCom() {
               <Footer.LinkGroup col>
                 <Footer.Link
                   href='/projects'
-                  
+                  target = '_blank'
                 >
                   Projects
                 </Footer.Link>
                 <Footer.Link
                   href='/about'
-                  
+                  target='_blank'
                 >
                   Blogify
                 </Footer.Link>
