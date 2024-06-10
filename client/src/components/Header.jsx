@@ -11,6 +11,7 @@ import { signOutSuccess } from '../redux/user/userSlice';
 export default function Header() {
   const path = useLocation().pathname;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {currentUser} = useSelector(state => state.user);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(path);
@@ -57,6 +58,12 @@ export default function Header() {
     setDropdownOpen(false);
     setActiveSection(section);
   };
+  const handleSearchIconClick = () => {
+    const urlParams = new URLSearchParams(location.search);
+    urlParams.set('searchTerm', searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/search?${searchQuery}`);
+  };
 
   return (
     <Navbar className="border-b-2 flex items-center justify-between p-4">
@@ -67,21 +74,19 @@ export default function Header() {
       </Link>
 
       {/* Search Box and Button (Visible on Larger Screens) */}
-      <form className="hidden lg:flex items-center ml-4 relative">
-        <div className="relative">
-          <TextInput
-            type="text"
-            placeholder="Search..."
-            className="pr-10 pl-3 py-2 w-64 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-10 pointer-events-none">
-            <AiOutlineSearch size={25} />
-          </div>
-        </div>
+      <form onSubmit={handleSubmit}>
+        <TextInput
+          type='text'
+          placeholder='Search...'
+          rightIcon={AiOutlineSearch}
+          className='hidden lg:inline'
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </form>
 
       {/* Search Icon Only (Visible on Smaller Screens) */}
-      <Button className="lg:hidden ml-4" color="black">
+      <Button className="lg:hidden ml-4" color="black" onClick={handleSearchIconClick}>
         <AiOutlineSearch size={24} />
       </Button>
 
